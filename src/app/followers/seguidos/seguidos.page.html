@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons  slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Seguidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="seguidos.length > 0">
+    <ion-item *ngFor="let seguido of seguidos">
+      <ion-avatar slot="start" (click)="visualizarUsuario(seguido.id)">
+        <img [src]="seguido.imagen">
+      </ion-avatar>
+      <ion-label (click)="visualizarUsuario(seguido.id)">
+        <h2>{{seguido.username}}</h2>
+      </ion-label>
+      <ion-button *ngIf="usuario.seguidos.indexOf(seguido.id) != -1 && usuario.id != seguido.id" default size="small" color="light" (click)="dejarDeSeguir(seguido.id)">
+        Siguiendo
+      </ion-button>
+      <ion-button *ngIf="usuario.seguidos.indexOf(seguido.id) == -1 && usuario.id != seguido.id" default size="small" color="primary" (click)="seguir(seguido.id)">
+        Seguir
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

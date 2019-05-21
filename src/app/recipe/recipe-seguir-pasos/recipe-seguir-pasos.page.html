@@ -1,0 +1,84 @@
+<ion-header *ngIf="receta !== undefined">
+    <ion-toolbar>
+        <ion-buttons  slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title *ngIf="receta !== undefined" text-left style="margin-left: 35px" >{{receta.titulo}}</ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="receta !== undefined">
+    <div style="height: auto">
+        <ion-img  src="{{receta.imagenes[0]}}"></ion-img>
+    </div>
+
+    <ion-slides (ionSlideTouchEnd)="updateNumeroPaso()"  style="height: 60%;" pager="true" [options]="slideOpts" #slides>
+      
+        <ion-slide style="width: 80%">
+            <ion-grid style="height: 100%; width: 80%" >
+                
+                <ion-row style="background-color: whitesmoke">
+                  <ion-col style="margin-bottom: 2%"> 
+                     <h1> {{numeroPaso}}. Ingredientes</h1> 
+                  </ion-col>
+                </ion-row>
+
+                <ion-row  class ="slide-zoom">
+                    <ion-col  > 
+                        
+                      <ion-textarea style="font-size: 20px" readonly="true">
+                         
+                          <div  *ngFor="let ingrediente of receta.ingredientes">
+                             
+                              <ion-item style="margin-right: 10px; " >
+                                  <ion-checkbox mode="ios" color="primary" style="margin-right: 12px"></ion-checkbox>
+                                  <ion-label  style="white-space: pre-wrap;" >{{ingrediente}}</ion-label> 
+                              </ion-item>
+                            
+                          </div>
+                       
+                      </ion-textarea> 
+                    
+                    </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </ion-slide>
+
+            <ion-slide *ngFor="let paso of receta.pasos">
+              <ion-grid style="height: 100%">
+                  <ion-row style="margin-bottom: 10%; background-color: whitesmoke">
+                    <ion-col style="margin-bottom: 2%"> 
+                       <h1> {{numeroPaso}}. {{paso.titulo}} </h1> 
+                    </ion-col>
+                  </ion-row>
+
+                  <ion-row>
+                      <ion-col > 
+                        <ion-textarea style="font-size: 20px" readonly="true">{{paso.descripcion}}</ion-textarea>   
+                      </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-slide>
+
+    </ion-slides>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar transparent>
+    <ion-button *ngIf="numeroPaso > 0" type="submit" float-left ion-button  mode="ios" color="success" (click)="prev()" style="border-radius: 15%">
+        <ion-icon mode="ios" name="arrow-back"></ion-icon>
+    </ion-button>
+    
+    <div style="position: absolute; margin-left: 43%; margin-top: 15px"> 
+      <ion-label style="font-size: 21px; " >{{numeroPaso}} / {{totalPasos}}</ion-label>
+    </div>
+    <ion-button *ngIf="numeroPaso < totalPasos" type="submit" float-right ion-button  mode="ios" color="success"  (click)="next()"  style="border-radius: 15%">
+        <ion-icon mode="ios" name="arrow-forward"></ion-icon>
+    </ion-button>
+    
+    <ion-button *ngIf="numeroPaso >= totalPasos" (click)="presentAlert()" type="submit" float-right ion-button  mode="ios" color="danger"  style="border-radius: 15%">
+      Finalizar
+    </ion-button>
+    
+  </ion-toolbar>
+</ion-footer>

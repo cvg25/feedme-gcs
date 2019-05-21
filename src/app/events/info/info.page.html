@@ -1,0 +1,78 @@
+<ion-header *ngIf="evento !== undefined && usuario !==undefined">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="evento !== undefined" text-left style="margin-left: 35px">{{evento.titulo}}</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="evento !== undefined && usuario !==undefined">
+
+  <ion-slides style="height: 40%" pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let imagen of evento.imagenes">
+      <img style="width: 100% !important; height: 100% !important;" src="{{imagen}}">
+    </ion-slide>
+  </ion-slides>
+
+  <ion-item class="item-avatar" (click)="visualizarUsuario(evento.creador)">
+    <ion-avatar style="margin-top: 10px">
+      <img src="{{usuario.imagen}}">
+    </ion-avatar>
+    <ion-label text-left style="margin-left:10px">{{usuario.username}}</ion-label>
+    <ion-label text-right style="  margin-bottom: 10px; margin-left:10px; color: gray; font-size: 13px">Publicada el
+      {{evento.fecha}}</ion-label>
+  </ion-item>
+
+  <ion-row justify-content-between>
+    <ion-chip color="light" text-left style="margin-left:10px">
+      <ion-icon color="dark" name="time"></ion-icon>
+      <ion-label color="dark">Fecha del Evento: {{evento.fechaRealizacion}}</ion-label>
+    </ion-chip>
+    <div>
+      <ion-chip outline="true" *ngIf="evento.usuarios.indexOf(usuarioLoggeado.id) == -1 && evento.creador != usuarioLoggeado.id" text-left style="margin-right:5px"  (click)="addCalendar(usuarioLoggeado.id, evento.id)">
+        <ion-label color="dark" >Asistir | {{evento.usuarios.length}}</ion-label>
+
+          <ion-icon name="checkbox-outline" color="tertiary"></ion-icon>
+
+
+      </ion-chip>
+            <ion-chip outline="true" (click)="removeCalendar(usuarioLoggeado.id, evento.id)" text-left style="margin-right:5px" *ngIf="evento.usuarios.indexOf(usuarioLoggeado.id) > -1 && evento.creador != usuarioLoggeado.id">
+
+              <ion-label color="dark">En Calendario |
+                {{evento.usuarios.length}}</ion-label>
+            
+              <ion-icon 
+                (click)="removeCalendar(usuarioLoggeado.id, evento.id)" name="checkbox" color="tertiary"></ion-icon>
+            
+            </ion-chip>
+
+    </div>
+  </ion-row>
+
+  <hr>
+      <ion-grid>
+        <ion-row text-center justify-content-around>
+          <ion-col *ngIf="descripcionActivo" (click)="verDetalles()"> <b>Descripción</b></ion-col>
+          <ion-col *ngIf="!descripcionActivo" (click)="verDetalles()">Descripción</ion-col>
+          <ion-col *ngIf="!descripcionActivo" (click)="verDetalles()"> <b>Asistentes</b></ion-col>
+          <ion-col *ngIf="descripcionActivo" (click)="verDetalles()">Asistentes</ion-col>
+        </ion-row>
+      </ion-grid>
+<div *ngIf="descripcionActivo" padding="10px">{{evento.descripcion}}</div>
+<div *ngIf="!descripcionActivo" padding="10px">
+  <div *ngFor="let user of evento.usuarios">
+    <ion-item class="item-avatar" (click)="visualizarUsuario(user)">
+      <ion-avatar style="margin-top: 10px">
+        <img src="{{usersMap[user].imagen}}">
+      </ion-avatar>
+      <ion-label text-left style="margin-left:10px">{{usersMap[user].username}}</ion-label>
+    </ion-item>
+  </div>
+
+</div>
+
+
+
+</ion-content>

@@ -1,0 +1,141 @@
+[
+    {   
+        "id": "user_1",
+        "nombre": "Juan Pérez Sánchez",
+        "username": "juanpe",
+        "email": "juanpe@gmail.com",
+        "password": "12345678",
+        "recetas": [
+            "receta_1",
+            "receta_2",
+            "receta_3"
+        ],
+        "seguidores": [
+            "user_2",
+            "user_3",
+            "user_4",
+            "user_5"
+        ],
+        "seguidos": [
+            "user_2",
+            "user_3",
+            "user_4"
+        ],
+        "eventos": [
+            "evento_1", "evento_2"
+        ],
+        "imagen": "assets/images/users/juanpe.jpg"
+    },
+    {
+        "id": "user_2",
+        "nombre": "Jose Carlos Pompella Valirio",
+        "username": "joseca",
+        "email": "joseca@gmail.com",
+        "password": "12345678",
+        "recetas": ["receta_4"],
+        "seguidores": [
+            "user_1",
+            "user_3",
+            "user_4"
+        ],
+        "seguidos": [
+            "user_1",
+            "user_3",
+            "user_5"
+        ],
+        "eventos": [],
+        "imagen": "assets/images/users/joseca.jpg"
+    },
+    {
+        "id": "user_3",
+        "nombre": "Alejo Pan Salao",
+        "username": "appss",
+        "email": "appss@gmail.com",
+        "password": "12345678",
+        "recetas": [
+            "receta_5"
+        ],
+        "seguidores": [
+            "user_1",
+            "user_2",
+            "user_4"
+        ],
+        "seguidos": [
+            "user_2",
+            "user_4"
+        ],
+        "eventos": [
+            "evento_3"
+        ],
+        "imagen": "assets/images/users/alejo.jpeg"
+    },
+    {
+        "id": "user_4",
+        "nombre": "Virtudes Sánchez Casado",
+        "username": "virtu",
+        "email": "virtu@gmail.com",
+        "password": "12345678",
+        "recetas": [
+            "receta_6"
+        ],
+        "seguidores": [
+            "user_2",
+            "user_3",
+            "user_1",
+            "user_5"
+        ],
+        "seguidos": [
+            "user_1",
+            "user_2",
+            "user_3"
+        ],
+        "eventos": [
+            "evento_4", "evento_5", "evento_6"
+        ],
+        "imagen": "assets/images/users/virtudes.jpg"
+    },
+    {
+        "id": "user_5",
+        "nombre": "Matt del Bosque Verde",
+        "username": "matt",
+        "email": "matt@gmail.com",
+        "password": "12345678",
+        "recetas": [
+            "receta_7"
+        ],
+        "seguidores": [
+            "user_4",
+            "user_3",
+            "user_1"
+        ],
+        "seguidos": [
+            "user_1",
+            "user_2",
+            "user_4"
+        ],
+        "eventos": [],
+        "imagen": "assets/images/users/matt.jpg"
+    },
+    {
+        "id": "user_6",
+        "nombre": "Antonio Cortés Díaz",
+        "username": "antonio",
+        "email": "antonio@gmail.com",
+        "password": "12345678",
+        "recetas": [
+            "receta_8"
+        ],
+        "seguidores": [
+            "user_2",
+            "user_3",
+            "user_5"
+        ],
+        "seguidos": [
+            "user_1",
+            "user_6",
+            "user_2"
+        ],
+        "eventos": [],
+        "imagen": "assets/images/users/antonio.png"
+    }
+]

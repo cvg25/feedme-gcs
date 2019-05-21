@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>Feedme</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="usuarioLoggeado !== undefined">
+
+  <ion-list>
+    <ion-card *ngFor="let recipe of recipes">
+      <ion-item (click)="visualizarUsuario(recipe.userId)">
+        <ion-avatar>
+          <img src="{{usersMap[recipe.userId].imagen}}">
+        </ion-avatar>
+        <ion-label text-left style="margin-left:10px">{{usersMap[recipe.userId].username}}</ion-label>
+        <ion-label text-right style="margin-left:10px; color: gray; font-size: 13px">Publicada el
+          {{recipe.fechaCreacion}}</ion-label>
+      </ion-item>
+      <ion-slides style="height: 250px" pager="true"  (click)="visualizarReceta(recipe.id)">  
+          <ion-slide *ngFor="let imagen of recipe.imagenes">
+            <img  style="width: 100% !important; height: 100% !important;" src="{{imagen}}">
+          </ion-slide>
+      </ion-slides>
+    
+      <ion-item>
+        <ion-label (click)="visualizarReceta(recipe.id)" style="margin-left:10px;">{{recipe.titulo}}</ion-label>
+        <ion-icon (click)="visualizarComentariosReceta(recipe.id)" mode="ios" style="margin-right:10px"
+          *ngIf="recipe.comentarios.length != 0" name="chatbubbles"></ion-icon>
+
+        <ion-icon *ngIf="recipe.likes.indexOf(usuarioLoggeado.id) == -1"
+          (click)="addLike(usuarioLoggeado.id, recipe.id)" name="heart-empty"></ion-icon>
+        <ion-icon *ngIf="recipe.likes.indexOf(usuarioLoggeado.id) > -1"
+          (click)="removeLike(usuarioLoggeado.id, recipe.id)" name="heart" color="danger"></ion-icon>
+      </ion-item>
+
+      <ion-card-content (click)="visualizarReceta(recipe.id)" text-left>
+        <ion-label *ngIf="recipe.descripcion.length <= 100">{{recipe.descripcion}}</ion-label>
+        <ion-label *ngIf="recipe.descripcion.length > 100">{{recipe.descripcion.substring(0, 100)}} ...</ion-label>
+
+
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,99 @@
+[
+    {
+        "id": "evento_1",
+        "titulo": "Barbacoa en Ferrusa",
+        "descripcion": "Ahora llega el verano y con él, la temporada de barbacoas. Somos expertos en barbacoas y Ferrusa es el lugar ideal para disfrutar de lo que más nos gusta. Ven a pasar un día divertido y glotón.",
+        "fecha": "2019-07-05",
+        "fechaRealizacion": "2019-07-08",
+        "visibilidad": 0,
+        "imagenes": [
+            "assets/images/eventos/barbacoa_ferrusa_1.jpg",
+            "assets/images/eventos/barbacoa_ferrusa_2.jpg",
+            "assets/images/eventos/barbacoa_ferrusa_3.jpg"
+        ],
+        "usuarios": [
+            "user_2", "user_4"
+        ],
+        "creador": "user_1"
+    },
+    {
+        "id": "evento_2",
+        "titulo": "Gachamiga en San Crispín",
+        "descripcion": "Competición de gachamigas en San Crispín. Todos pensamos que somos unos maestros de la gachamiga, y como dice el dicho, cada maestro tiene su librillo. Por eso, te invitamos a venir y demostrar que tu receta es la mejor. El objetivo del día es conocer gente nueva y aprender de todos, además de disfrutar de lo que más nos gusta.",
+        "fecha": "2019-07-12",
+        "fechaRealizacion": "2019-07-20",
+        "visibilidad": 0,
+        "imagenes": [
+            "assets/images/eventos/gachamiga_1.jpg",
+            "assets/images/eventos/gachamiga_2.jpg"
+        ],
+        "usuarios": [
+            "user_3"
+        ],
+        "creador": "user_1"
+    },
+    {
+        "id": "evento_3",
+        "titulo": "Cena de sobaquillo en el Postiguet",
+        "descripcion": "La idea es pasar un velada divertida cenando en la playa mientras disfrutamos del ruido de las olas. La cena de sobaquillo consiste en traer tu propia cena y compartir con el resto de asistentes. Seguro que lo pasamos genial.",
+        "fecha": "2019-07-21",
+        "fechaRealizacion": "2019-07-21",
+        "visibilidad": 1,
+        "imagenes": [
+            "assets/images/eventos/postiguet_1.jpg",
+            "assets/images/eventos/postiguet_2.jpg"
+        ],
+        "usuarios": [
+            "user_5", "user_2", "user_1"
+        ],
+        "creador": "user_3"
+    },
+    {
+        "id": "evento_4",
+        "titulo": "Cata de postres",
+        "descripcion": "Empezamos Julio con una tarde muy dulce y agradable junto a todos los que quieran acompañarnos a nuestra Cata de Postres, donde podrán degustar entre otros los clásicos como: El tiramisu, panacotta, tarta de queso, tarta Santiago, rollos de tiramisu y zanahoria, variedad de muffins como zucchini canela y más.",
+        "fecha": "2019-07-01",
+        "fechaRealizacion": "2019-07-08",
+        "visibilidad": 0,
+        "imagenes": [
+            "assets/images/eventos/cata_postres_1.jpg",
+            "assets/images/eventos/cata_postres_2.jpg"
+        ],
+        "usuarios": [
+            "user_6", "user_1"
+        ],
+        "creador": "user_4"
+    },
+    {
+        "id": "evento_5",
+        "titulo": "Evento Vegano",
+        "descripcion": "Cada vez somos más los que se apuntan a comer sano y concienciados con la naturaleza. Ven a compartir tu pasión por la comida vegana, enseña tus recetas y aprende de los demás.",
+        "fecha": "2019-08-14",
+        "fechaRealizacion": "2019-08-16",
+        "visibilidad": 0,
+        "imagenes": [
+            "assets/images/eventos/vegano_1.jpg",
+            "assets/images/eventos/vegano_2.jpg"
+        ],
+        "usuarios": [
+            "user_2", "user_3"
+        ],
+        "creador": "user_4"
+    },
+    {
+        "id": "evento_6",
+        "titulo": "Cata de Vinos en Bodega",
+        "descripcion": "Descubre nuestras catas de vinos y visitas a bodega. Una experiencia genial para disfrutarla uno mismo y conocer a otros amantes del vino. ¡Adéntrate en el mundo de la enología!",
+        "fecha": "2019-08-15",
+        "fechaRealizacion": "2019-08-25",
+        "visibilidad": 0,
+        "imagenes": [
+            "assets/images/eventos/cata_vinos_1.jpg",
+            "assets/images/eventos/cata_vinos_2.jpg"
+        ],
+        "usuarios": [
+            "user_5", "user_6"
+        ],
+        "creador": "user_4"
+    }
+]

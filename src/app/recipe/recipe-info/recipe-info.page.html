@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons  slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="receta !== undefined" text-left style="margin-left: 35px" >{{receta.titulo}}</ion-title>
+   
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="receta !== undefined && usuario !== undefined && usuarioLoggeado !== undefined">
+
+      <ion-slides style="height: 40%" pager="true" [options]="slideOpts">  
+        <ion-slide *ngFor="let imagen of receta.imagenes">
+          <img style="width: 100% !important; height: 100% !important;" src="{{imagen}}">
+        </ion-slide>
+      </ion-slides>
+
+      <ion-item class="item-avatar"   (click)="visualizarUsuario(receta.userId)">
+        <ion-avatar style="margin-top: 10px">
+          <img src="{{usuario.imagen}}">
+        </ion-avatar>
+        <ion-label text-left style="margin-left:10px">{{usuario.username}}</ion-label>
+        <ion-label text-right style="  margin-bottom: 10px; margin-left:10px; color: gray; font-size: 13px">Publicada el {{receta.fechaCreacion}}</ion-label>
+      </ion-item>
+      
+        <ion-row justify-content-between>
+          <ion-chip  color="light" style="margin-left:10px" text-left>
+            <ion-icon  color="dark" name="podium"></ion-icon>
+            <ion-label color="dark"> {{Dificultad[receta.dificultad]}}</ion-label>
+          </ion-chip>
+          <ion-chip outline="true" style="margin-right:15px" text-left (click)="visualizarSeguirPasos(receta.id)">
+              <ion-label color="success"> ¡Seguir pasos!</ion-label>
+            <ion-icon name="play" color="success"></ion-icon>           
+          </ion-chip>
+        </ion-row>
+        <ion-row justify-content-between>
+          <ion-chip color="light" text-left style="margin-left:10px">
+            <ion-icon color="dark" name="time" ></ion-icon>
+            <ion-label color="dark">  {{receta.tiempo}}</ion-label>
+          </ion-chip>
+          <div>
+            <ion-chip outline="true" text-left style="margin-right:5px">
+              <ion-label color="dark">{{receta.likes.length}}</ion-label>
+              <ion-icon *ngIf="receta.likes.indexOf(usuarioLoggeado.id) == -1"
+                (click)="addLike(usuarioLoggeado.id, receta.id)" name="heart-empty">
+              </ion-icon>
+              <ion-icon *ngIf="receta.likes.indexOf(usuarioLoggeado.id) > -1"
+                (click)="removeLike(usuarioLoggeado.id, receta.id)" name="heart" color="danger">
+              </ion-icon>
+            </ion-chip>
+            <ion-chip outline="true" text-left style="margin-right:15px" (click)="visualizarComentariosReceta(receta.id)">
+              <ion-label color="dark">{{receta.comentarios.length}}</ion-label>
+              <ion-icon mode="ios" name="chatbubbles"></ion-icon>
+            </ion-chip>
+          </div>
+        </ion-row>
+        <ion-row justify-content-between>
+          <ion-chip  color="light" text-left style="margin-left:10px">
+            <ion-icon color="dark" name="restaurant" ></ion-icon>
+            <ion-label color="dark">{{Categoria[receta.categoria]}}</ion-label>
+          </ion-chip>
+          <ion-chip outline="true" text-left style="margin-right:15px">
+            <ion-label color="tertiary">Compartir</ion-label>
+            <ion-icon name="share" color="tertiary"></ion-icon>
+          </ion-chip>
+        </ion-row>
+  
+        <hr>
+      <ion-grid>
+        <ion-row text-center justify-content-around>
+          <ion-col *ngIf="descripcionActivo" (click)="verDescripcion()"> <b>Descripción</b></ion-col>
+          <ion-col *ngIf="!descripcionActivo" (click)="verDescripcion()">Descripción</ion-col>
+          <ion-col *ngIf="ingredientesActivo" (click)="verIngredientes()"><b>Ingredientes</b></ion-col>
+          <ion-col *ngIf="!ingredientesActivo" (click)="verIngredientes()">Ingredientes</ion-col>
+          <ion-col *ngIf="pasosActivo" (click)="verPasos()"><b>Pasos</b></ion-col>
+          <ion-col *ngIf="!pasosActivo" (click)="verPasos()">Pasos</ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <div *ngIf="descripcionActivo" padding="10px">{{receta.descripcion}}</div>
+      <div *ngIf="ingredientesActivo"  padding="10px" >
+        <div *ngFor="let ingrediente of receta.ingredientes">
+                <ion-item style="margin-right: 10px">
+                    <ion-label class="label-ingrediente">{{ingrediente}}</ion-label> 
+                </ion-item>
+        </div>
+       
+      </div>
+
+      <div *ngIf="pasosActivo"  padding="10px">
+        <div *ngFor="let paso of receta.pasos; let i = index">
+            <ion-item style="margin-right: 10px" (click)="presentPopover(paso,i+1)">
+               <b>{{i + 1}}. </b> 
+                <ion-label  class="label-ingrediente">{{paso.titulo}}</ion-label> 
+                <ion-icon name="eye"></ion-icon>
+            </ion-item>
+        </div>
+      </div>
+
+
+  
+</ion-content>

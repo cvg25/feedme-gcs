@@ -1,0 +1,236 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>Publicar receta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- FORMULARIO PARA DATOS BÁSICOS-->
+<ion-content *ngIf="datosBasicosRecetaCompletados">
+  <ion-title padding text-center style="white-space: pre-wrap; margin-top: 10px">Completa los datos básicos de tu receta
+  </ion-title>
+
+  <form [formGroup]="onDatosBasicosForm" class="list-form" style="margin-right: 20px; margin-left: 20px; ">
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating" style="font-size: 16px">
+        <ion-icon mode="ios" name="bookmark" item-start style="margin-right: 15px"></ion-icon>
+        Título
+      </ion-label>
+      <ion-input type="email" formControlName="titulo" clear-input></ion-input>
+    </ion-item>
+
+    <br>
+
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating" style="font-size: 16px">
+        <ion-icon mode="ios" name="bookmarks" item-start style="margin-right: 15px"></ion-icon>
+        Descripción
+      </ion-label>
+      <ion-textarea rows="3" formControlName="descripcion"> </ion-textarea>
+    </ion-item>
+
+    <br>
+
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating" style="font-size: 16px">
+        <ion-icon name="time" item-start style="margin-right: 15px"></ion-icon>
+        Tiempo estimado
+      </ion-label>
+      <ion-input formControlName="tiempo" clear-input></ion-input>
+    </ion-item>
+
+    <br>
+
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating" style="font-size: 16px">
+        <ion-icon name="podium" item-start style="margin-right: 15px"></ion-icon>
+        Dificultad
+      </ion-label>
+      <ion-select mode="md" formControlName="dificultad">
+        <ion-select-option *ngFor="let dificultad of dificultades" value="{{dificultad}}">{{Dificultad[dificultad]}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <br>
+
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating" style="font-size: 16px">
+        <ion-icon name="restaurant" item-start style="margin-right: 15px"></ion-icon>
+        Categoría
+      </ion-label>
+      <ion-select mode="md" formControlName="categoria">
+        <ion-select-option *ngFor="let categoria of categorias" value="{{categoria}}">{{Categoria[categoria]}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </form>
+
+  <br><br>
+
+  <div text-center>
+    <ion-item lines="none" style="margin-left: 5px; display: inline-block">
+      <div style="height: 75px; width: 75px"  >
+          <img (click)='takePhoto1()' style="width: 100% !important; height: 100% !important;" src="{{imagenUsuario1}}">
+        </div>
+    </ion-item>
+  
+    <ion-item lines="none" style="margin-left: 5px; display: inline-block">
+      <div style="height: 75px; width: 75px"  >
+          <img (click)='takePhoto2()' style="width: 100% !important; height: 100% !important;" src="{{imagenUsuario2}}">
+        </div>
+    </ion-item>
+  
+    <ion-item lines="none" style="margin-left: 5px; display: inline-block">
+      <div style="height: 75px; width: 75px"  >
+          <img style="width: 100% !important; height: 100% !important;" src="{{imagenUsuario3}}">
+        </div>
+    </ion-item>
+  
+  </div>
+  
+
+  <div style="margin-top: 10px" style="margin-right: 10px; margin-left: 10px; margin-top: 60px;">
+    <ion-button style="font-size: 14px" size="medium" expand="full" color="light" mode="ios" shape="round"
+      (click)="goToIngredientes()" [disabled]="!onDatosBasicosForm.valid" tappable>
+      Añadir ingredientes
+      <ion-icon mode="ios" name="arrow-forward" item-start></ion-icon>
+    </ion-button>
+    <br>
+  </div>
+
+</ion-content>
+
+
+<!-- FORMULARIO PARA AÑADIR INGREDIENTES-->
+<ion-content *ngIf="ingredientesRecetaCompletados">
+  <div style="height: 85%">
+    <form [formGroup]="onAddIngredientesForm" class="list-form" style="margin-right: 20px; margin-left: 20px; ">
+      <div style="height: 7%">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-button (click)="goToDatos()" style="font-size: 14px" mode="ios" expand="full" color="light"
+                shape="round">
+                <ion-icon mode="ios" name="arrow-back" item-start></ion-icon> Editar datos
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="goToPasos()" style="font-size: 14px" mode="ios" expand="full" color="light"
+                shape="round"> Crear pasos <ion-icon mode="ios" name="arrow-forward" item-start></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <br>
+      <ion-title padding text-center style="white-space: pre-wrap; margin-top: 10px">Añade los ingredientes necesarios
+      </ion-title>
+
+      <ion-row>
+        <ion-col size="8">
+          <ion-item no-padding class="animated fadeInUp">
+            <ion-input formControlName="ingrediente" clear-input placeholder="250 gr de arroz"
+              style="margin-left: 5%; width:100%;">
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="addIngrediente()" [disabled]="!onAddIngredientesForm.valid"
+            style="margin-left: 10%; margin-top: 10%">
+            Añadir
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+
+    <br>
+
+    <ion-list *ngFor="let ingrediente of ingredientes; let i = index">
+      <ion-item style="margin-right: 10px">
+        <ion-label class="label-ingrediente">{{ingrediente}}</ion-label>
+        <ion-button color="danger" item-end (click)="removeIngrediente(i)">
+          <ion-icon name="close" item-start></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+
+
+</ion-content>
+
+
+<!-- FORMULARIO PARA AÑADIR PASOS-->
+<ion-content *ngIf="pasosRecetaCompletados">
+  <div style="height: 85%">
+    <form [formGroup]="onAddPasosForm" class="list-form" style="margin-right: 20px; margin-left: 20px; ">
+      <div style="height: 7%">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-button (click)="goToIngredientes()" style="font-size: 14px" mode="ios" expand="full" color="light"
+                shape="round">
+                <ion-icon mode="ios" name="arrow-back" item-start></ion-icon> Editar ingredientes
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="guardarReceta() " style="font-size: 14px" mode="ios" expand="full" color="light"
+                shape="round">
+                Publicar receta </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <br>
+      <ion-title padding text-center style="white-space: pre-wrap; margin-top: 10px">Añade los pasos a seguir
+      </ion-title>
+
+      <ion-row>
+        <ion-col>
+          <ion-item no-padding class="animated fadeInUp">
+            <ion-input formControlName="titulo" clear-input placeholder="Título" style="margin-left: 5%; width:100%;">
+            </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item no-padding class="animated fadeInUp">
+            <ion-textarea rows="3" formControlName="descripcion" placeholder="Descripción del paso...">
+            </ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item no-padding class="animated fadeInUp">
+            <ion-input formControlName="tiempo" clear-input placeholder="Tiempo" style="margin-left: 5%; width:100%;">
+            </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="addPaso()" [disabled]="!onAddPasosForm.valid" style="margin-left: 10%; margin-top: 10%">
+            Añadir
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+
+    <br>
+
+    <ion-list *ngFor="let paso of pasos; let i = index">
+      <ion-item style="margin-right: 10px">
+        <ion-label class="label-ingrediente" (click)="presentPopover(paso,i+1)">Paso {{i+1}}: {{paso.titulo}}
+        </ion-label>
+        <ion-button color="danger" item-end (click)="removePaso(i)">
+          <ion-icon name="close" item-start></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+</ion-content>

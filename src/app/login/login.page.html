@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar text-center>
+    <ion-title >Feedme</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div style="width: 100%; height: 28%; margin-top: 25px" text-center >
+        <img  style="width:75% !important; height: 75% !important;" src="../../assets/images/logo/Feedme_Logo.png">
+      </div>
+
+  <ion-row style="margin-top: 10px;" *ngIf="errorMessage!=''" justify-content-center aling-items-center>
+    <ion-label color="danger">{{errorMessage}}</ion-label>
+  </ion-row>
+
+  <form [formGroup]="onLoginForm" class="list-form" style="margin-right: 20px; margin-left: 20px;">
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        <ion-icon name="mail" item-start></ion-icon>
+        Email
+      </ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        <ion-icon name="lock" item-start></ion-icon>
+        Contraseña
+      </ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+  </form>
+  <div style="margin-top: 60px" style="margin-right: 10px; margin-left: 10px; margin-top: 60px; margin-bottom: 10px">
+    <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="tryLogin()"
+      [disabled]="!onLoginForm.valid" tappable>
+      Entrar
+    </ion-button>
+  </div>
+  <div style="margin-top: 60px" style="margin-right: 10px; margin-left: 10px;">
+    <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="goToRegister()" tappable>
+      Registrarme
+    </ion-button>
+  </div>
+
+</ion-content>

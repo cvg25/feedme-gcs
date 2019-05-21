@@ -1,0 +1,378 @@
+[
+{
+    "fechaCreacion" : "12-08-2019",
+    "ingredientes" : ["4 pepinos medianos","150 gr tomates","30 gr olivas verde","1 cucharada de aceite de oliva virgen extra","albahaca fresca","sal"],
+    "id": "receta_1",
+    "titulo": "Tallarines de pepino",
+    "descripcion": "Las propiedades beneficiosas del pepino se conocen desde la antigüedad. Sus enzimas ayudan al organismo a asimilar las proteínas, purificar y desintoxicar. Si los cortas en juliana con una mandolina, parecerán cintas de pasta falsa. ¡A veces hay que engañarse para disfrutar!",
+    "imagenes": [
+        "assets/images/recetas/pepinos_2.jpg",
+        "assets/images/recetas/pepinos_1.jpg",
+        "assets/images/recetas/pepinos_3.jpg"
+    ],
+    "dificultad": 0,
+    "tiempo": "12 minutos",
+    "categoria": 1,
+    "pasos": [],
+    "comentarios":[
+        { 
+            "userId": "user_4",
+            "mensaje": "Deliciosa receta, gracias!!!",
+            "fecha": "12-08-2019"
+        },
+        {
+            "userId": "user_3",
+            "mensaje": "Vaya crack de la cocina estás hecho",
+            "fecha": "13-08-2019"
+        }   
+    ],
+    "userId": "user_1",
+    "likes":["user_2"]
+},
+{
+    "fechaCreacion": "13-08-2019",
+    "ingredientes": [
+        "400 g de brocolis",
+        "1 guindilla",
+        "6 filetes de anchoas",
+        "1 diente de ajo",
+        "aceite de oliva virgen extra",
+        "queso parmesano rallado",
+        "pan rallado"
+    ],
+    "id": "receta_2",
+    "titulo": "Brocolis gratinados",
+    "descripcion": "Además de exquisita, esta verdura ayuda a nuestro sistema inmunitario a defender el organismo. Este plato también se puede llevar a la oficina para un almuerzo sano y rico",
+    "imagenes": [
+        "assets/images/recetas/brocoli_1.jpg",
+        "assets/images/recetas/brocoli_2.jpg",
+        "assets/images/recetas/brocoli_3.jpg",
+        "assets/images/recetas/brocoli_4.jpg"
+    ],
+    "dificultad": 3,
+    "tiempo": "20 minutos",
+    "categoria": 1,
+    "pasos": [],
+    "comentarios":[
+        {
+            "userId": "user_4",
+            "mensaje": "Con mucho queso estan más buenos",
+            "fecha": "13-08-2019"
+        },
+        {
+            "userId": "user_2",
+            "mensaje": "Falta mas queso",
+            "fecha": "14-08-2019"
+        }           
+    ],
+    "userId": "user_1",
+    "likes": ["user_6", "user_2"]
+}
+,
+{
+    "fechaCreacion": "14-08-2019",
+    "ingredientes": [
+        "750 gr de zanahorias",
+        "1 ramillete de apio",
+        "2 dientes de ajo",
+        "1 chupito de aceite de oliva virgen",
+        "1 cucharada de mantequilla o margarina",
+        "2 patatas medianas",
+        "750 ml de agua",
+        "1 pastilla de caldo de pollo o verduras",
+        "sal", 
+        "pimienta negra"
+    ],
+    "id": "receta_3",
+    "titulo": "Crema depurativa de apio",
+    "descripcion": "Esta crema es tan detox como sabrosa y alegre a la vista. A ti te sentará muy bien y además le gustará a toda la familia.",
+    "imagenes": [
+        "assets/images/recetas/crema_apio_1.jpg",
+        "assets/images/recetas/crema_apio_2.jpg",
+        "assets/images/recetas/crema_apio_3.jpg"
+    ],
+    "dificultad": 2,
+    "tiempo": "12 minutos",
+    "categoria": 1,
+    "pasos": [],
+    "comentarios": [
+        {
+            "userId": "user_5",
+            "mensaje": "He ido al baño y he notado como mi intestino ha sido renovado",
+            "fecha": "14-08-2019"
+        },
+        {
+            "userId": "user_4",
+            "mensaje": "Las zanahorias peladas mejor",
+            "fecha": "18-08-2019"
+        }   
+    ],
+    "userId": "user_1",
+    "likes": ["user_5", "user_2"]
+}
+,
+{
+    "fechaCreacion": "15-08-2019",
+    "ingredientes": [
+        "500 g. de langostinos frescos o congelados (no valen cocidos)",
+        "1 cebolleta o una cebolla grande",
+        "1 pimiento rojo grande",
+        "1 pimiento verde grande",
+        "1/4 de un repollo o col grande",
+        "4 zanahorias grandes",
+        "200 g. de arroz basmati o thai",
+        "2 cucharadas de salsa de soja",
+        "2 cdas de aceite de sésamo",
+        "La ralladura de lima",
+        "Sal y pimienta negra recién molida (al gusto)",
+        "un poquito de aceite de oliva virgen extra"
+    ],
+    "id": "receta_4",
+    "titulo": "Verduras salteadas al wok",
+    "descripcion": "Esta receta con verduras y langostinos es muy sencilla, sana, ligera y sobre todo muy sabrosa. Estoy seguro que os gustarán. Además para hacer esta receta he usado uno de mis utensilios preferidos, el wok.",
+    "imagenes": [
+        "assets/images/recetas/verduras_wok_1.jpg",
+        "assets/images/recetas/verduras_wok_2.jpg",
+        "assets/images/recetas/verduras_wok_3.jpg"
+    ],
+    "dificultad": 1,
+    "tiempo": "12 minutos",
+    "categoria": 5,
+    "pasos": [],
+    "comentarios": [
+        {
+            "userId": "user_6",
+            "mensaje": "Mariscos Recio – El Mar al Mejor Precio",
+            "fecha": "15-08-2019"
+        }   
+    ],
+    "userId": "user_2",
+    "likes": ["user_1", "user_6"]
+}
+,
+{
+    "fechaCreacion": "16-08-2019",
+    "ingredientes": [
+        "250 g. harina de trigo todo uso",
+        "250 g. de agua",
+        "1 cucharadita de sal (8 gramos aproximadamente)",
+        "Azúcar para espolvorear",
+        "Aceite de oliva suave para freír o aceite de girasol",
+        "Papel absorbente de cocina",
+        "Una churrera manual o una manga pastelera con boca fina"
+    ],
+    "id": "receta_5",
+    "titulo": "Churros caseros",
+    "descripcion": "Cómo preparar churros. No existe un rincón de España donde no se hagan churros y porras. De Norte a Sur de la península los churros son un recurso siempre bienvenido, para un desayuno o una merienda acompañados de un buen chocolate caliente o, simplemente un café con leche.",
+    "imagenes": [
+        "assets/images/recetas/churros_2.jpeg",
+        "assets/images/recetas/churros_1.jpg",
+        "assets/images/recetas/churros_3.jpg"
+    ],
+    "dificultad": 0,
+    "tiempo": "12 minutos",
+    "categoria": 3,
+    "pasos": [],
+    "comentarios": [
+        {
+            "userId": "user_2",
+            "mensaje": "A mi me da igual de donde sea ni voy a discutir de donde son los mejores. A mi lo que mas me gusta es mojar el churro que es lo importante.",
+            "fecha": "17-08-2019"
+        },
+        {
+            "userId": "user_1",
+            "mensaje": "Los churros son los finos, esto son porras que son mas gordas, lo mejor es que no te quepan en la boca.",
+            "fecha": "20-08-2019"
+        }   
+    ],
+    "userId": "user_3",
+    "likes": ["user_1", "user_6"]
+},
+{
+    "fechaCreacion": "17-08-2019",
+    "ingredientes": [
+        "4 pechugas medianas de pollo deshuesadas",
+        "2 cebollas",
+        "200 g. de arroz Thai Sundari",
+        "40 g. de anacardos tostados y pelados (podéis emplear el fruto seco que más os guste)",
+        "250 ml. de leche de coco.",
+        "70 g. de uvas pasas o sultanas",
+        "50 ml. de aceite de oliva virgen suave",
+        "3 cucharaditas tipo de postre (colmadas) de polvo de curry amarillo",
+        "Sal",
+        "pimienta negra recién molida (al gusto)",
+        "Hojas frescas de cilantro"
+    ],
+    "id": "receta_6",
+    "titulo": "Pollo al curry",
+    "descripcion": "Cómo preparar pollo al curry. Hace ya muchos años que cocinamos una de las recetas de pollo que más éxito tiene en el blog, pollo al curry o curry de pollo.",
+    "imagenes": [
+        "assets/images/recetas/pollo_curry_1.jpg",
+        "assets/images/recetas/pollo_curry_2.jpg",
+        "assets/images/recetas/pollo_curry_3.jpg"
+    ],
+    "dificultad": 1,
+    "tiempo": "40 minutos",
+    "categoria": 5,
+    "pasos": [],
+    "comentarios": [
+        { 
+            "userId": "user_1",
+            "mensaje": "Muy fan de esta receta",
+            "fecha": "17-08-2019"
+        },
+        {
+            "userId": "user_3",
+            "mensaje": "Eso no lo has hecho tú, que nos conocemos",
+            "fecha": "17-08-2019"
+        },
+        {
+            "userId": "user_4",
+            "mensaje": "Cada día te superas, un saludo.",
+            "fecha": "18-08-2019"
+        } 
+    ],
+    "userId": "user_4",
+    "likes": ["user_5", "user_1", "user_6", "user_2"]
+},
+{
+    "fechaCreacion": "18-08-2019",
+    "ingredientes": [
+        "1 barra de pan 55cm",
+        "1 l y medio de leche entera",
+        "5 huevos medianos",
+        "1 palo de canela-rama",
+        "1 vaina de vainilla", 
+        "la cáscara de medio limón",
+        "100 ml de vino de Oporto",
+        "300 g de azúcar blanca", 
+        "1 cucharada de canela molida",
+        "1/2 l de aceite de oliva virgen extra suave"
+    ],
+    "id": "receta_7",
+    "titulo": "Torrijas de leche",
+    "descripcion": "Dentro de las recetas de postres más tradicionales en España, no podían faltar las torrijas de pan. Una receta tal como la suelo preparar en casa desde peque, hecha tal y como me enseñó mi madre. Con tan sólo una variación, el tipo de pan. En mi casa, como en casi todas, este era un postre de reciclaje y se reutilizaba el pan de días anteriores.",
+    "imagenes": [
+        "assets/images/recetas/torrijas_1.jpg",
+        "assets/images/recetas/torrijas_2.jpg",
+        "assets/images/recetas/torrijas_3.jpg",
+        "assets/images/recetas/torrijas_4.jpg"
+    ],
+    "dificultad": 2,
+    "tiempo": "25 minutos",
+    "categoria": 0,
+    "pasos": [],
+    "comentarios": [
+        { 
+            "userId": "user_2",
+            "mensaje": "Las torrijas nunca me han convencido, pero probaré a hacer esta receta",
+            "fecha": "18-08-2019"
+        },
+        {
+            "userId": "user_3",
+            "mensaje": "Vaya pinta!!!",
+            "fecha": "18-08-2019"
+        },
+        {
+            "userId": "user_1",
+            "mensaje": "Aún sigues con ganas de torrijas despues de los del año pasado?",
+            "fecha": "19-08-2019"
+        },
+        {
+            "userId": "user_6",
+            "mensaje": "Dudo que me salgan así pero lo intentaré",
+            "fecha": "19-08-2019"
+        }
+    ],
+    "userId": "user_5",
+    "likes": ["user_6"]
+},
+{
+    "fechaCreacion": "19-08-2019",
+    "ingredientes": [
+        "8 huevos camperos",
+        "1 kg de patatas gallegas",
+        "Aceite de oliva virgen extra",
+        "1 cebolla grande",
+        "Sal (al gusto)"
+    ],
+    "id": "receta_8",
+    "titulo": "Tortilla de patatas",
+    "descripcion": "No voy a presentaros una receta de tortilla española única y universal, está claro que esta es mi receta, la de casa que me enseñó mi madre. Porque la mejor tortilla es la de papa o mamá, la de la abuela, la de casa, la del bar de toda la vida con esa caña bien tirada que la hace suprema",
+    "imagenes": [
+        "assets/images/recetas/tortilla_1.jpg",
+        "assets/images/recetas/tortilla_2.jpg",
+        "assets/images/recetas/tortilla_3.jpg"
+    ],
+    "dificultad": 0,
+    "tiempo": "30 minutos",
+    "categoria": 4,
+    "pasos": [
+        {
+            "titulo": "Preparamos patatas",
+            "descripcion": "Pelamos las patatas, las lavamos para quitar restos de suciedad y muy importante, las secamos.",
+            "tiempo": ""
+        },
+        {
+            "titulo": "Al gusto",
+            "descripcion": "Cortamos en láminas semifinas, a mí no me gusta que se deshagan sino que al freírlas se tuesten un poco. Las colocamos en un bol grande, donde luego vamos a mezclar con el huevo y añadimos sal al gusto. Removemos bien y reservamos.",
+            "tiempo": ""
+        },
+        {
+            "titulo": "Preparamos sartén",
+            "descripcion": "Elegimos nuestra sartén más grande y antiadherente. La ponemos al fuego y añadimos un buen aceite de oliva virgen extra.",
+            "tiempo": ""
+        },
+        {
+            "titulo": "Aceite al gusto",
+            "descripcion": "No tengáis miedo en gastaros un poco de dinero en aceite, le va a dar ese punto de sabor que distingue vuestra tortilla de las demás, podéis emplear muchas variedades: arbequina, picual, cornicabra, hojiblanca, royal… el que más os guste, pero de calidad.",
+            "tiempo": ""
+        },
+        {
+            "titulo": "Cociamos las patatas",
+            "descripcion": "Introducimos las patatas cortadas y ya saladas y dejamos que se cocinen durante aproximadamente veinte minutos a fuego bajo.",
+            "tiempo": "20 minutos"
+        },
+        {
+            "titulo": "Tus patatas, tus reglas",
+            "descripcion": "El tema del grosor de las patatas también va a gustos. Hay quien prefiere cortarlas a trozos muy pequeños, en láminas muy finas que casi se rompan al freír y o más bien grandes.",
+            "tiempo": ""
+        },
+        {
+            "titulo": "La gran batida",
+            "descripcion": "Mientras se están friendo las patatas, en el bol donde luego vamos a echar las patatas batimos los huevos, reservamos.",
+            "tiempo": ""
+        },
+        {
+            "titulo": "A lo fino",
+            "descripcion": "Pelamos la cebolla y cortamos lo más fino posible. ",
+            "tiempo": ""
+        },
+        {
+            "titulo": "Calentar aceite y añadir cebolla",
+            "descripcion": "En otra sartén calentamos aceite de oliva y añadimos los trozos de cebolla.",
+            "tiempo": ""
+        },
+        {
+            "titulo": "Pochamos",
+            "descripcion": "Pochamos hasta que tenga un color dorado, que tenga un punto de caramelización pero sin llegar a quemarse. La cebolla se hará antes que las patatas, así que escurrimos y añadimos al bol con el huevo batido.",
+            "tiempo": ""
+        }
+    ],
+    "comentarios": [
+        {
+            "userId": "user_2",
+            "mensaje": "La primera tortilla que hago y me ha quedao buenísima ",
+            "fecha": "19-08-2019"
+        },
+        {
+            "userId": "user_3",
+            "mensaje": "A mí no me acaba de convencer del todo ...",
+            "fecha": "19-08-2019"
+        }
+    ],
+    "userId": "user_6",
+    "likes": ["user_5"]
+}
+] 
+

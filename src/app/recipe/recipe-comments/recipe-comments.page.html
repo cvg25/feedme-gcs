@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons  slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title *ngIf="receta !== undefined" text-left style="margin-left: 35px" >{{receta.titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #content *ngIf="receta !== undefined && usersMap !== undefined">
+  
+    <div *ngFor="let comentario of comentarios" style="margin-top: 5%; margin-left: 5%; margin-right: 5%">
+      <ion-item class="item-comentario" >
+        <ion-avatar>
+          <img src="{{usersMap[comentario.userId].imagen}}" (click)="visualizarUsuario(usersMap[comentario.userId].id)">
+        </ion-avatar>
+        <ion-label style="font-weight: bold; margin-left: 5%;" (click)="visualizarUsuario(usersMap[comentario.userId].id)">{{usersMap[comentario.userId].username}}</ion-label>
+        <ion-label text-right>{{comentario.fecha}}</ion-label>
+      </ion-item>
+      <ion-item class="item-comentario">
+        <div class="div-comentario">
+            <ion-label class="label-comentario">{{comentario.mensaje}}</ion-label>
+        </div>
+      </ion-item> 
+    </div>
+    <br>
+    
+</ion-content>
+
+<ion-footer>
+   
+  <ion-toolbar>
+      
+      <!-- Input with placeholder --> 
+      <ion-textarea (ionChange)="escribirComentario()" [(ngModel)]="nuevoComentario" placeholder="¡Envía tu comentario!" color="dark" style="width: 85%; background-color: whitesmoke; border-radius: 15px "> 
+         
+      </ion-textarea>
+     
+      <ion-fab vertical="bottom" horizontal="end" style="height: 45px" > 
+          <ion-fab-button [disabled]="noText" color="tertiary" style="width: 45px; height: 45px; " (click)="guardarComentario()">
+              <ion-icon name="send"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+  </ion-toolbar>
+</ion-footer>

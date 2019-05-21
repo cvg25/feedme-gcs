@@ -1,0 +1,101 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons  slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{usuario ? usuario.username : ''}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="usuario !== undefined && recetas !== undefined">
+   
+    <div style="height: 35%!important; width: 100%;">
+      <img  style="width: 100% !important; height: 100% !important;" src="{{usuario.imagen}}">
+    </div>
+    
+    <div  style="height: 65%;">
+      <ion-grid style="background-color: whitesmoke ">
+        <ion-row>
+          <ion-col size="8" align-items-center>
+            <ion-row>
+              <ion-label style="margin-top: 10px; margin-left: 10px; font-size: 18px;" text-left><b>{{usuario.nombre}}</b></ion-label>
+            </ion-row>
+          </ion-col>
+          <ion-col size="2">
+            <div (click)="verSeguidores(usuario.id)">
+              <ion-row justify-content-center><b style="font-size: 18px;">{{usuario.seguidores.length}}</b></ion-row>
+              <ion-row justify-content-center><ion-label style="font-size: 12px;">seguidores</ion-label></ion-row>
+            </div>
+          </ion-col>
+          <ion-col size="2">
+            <div (click)="verSeguidos(usuario.id)">
+              <ion-row justify-content-center><b style="font-size: 18px;">{{usuario.seguidos.length}}</b></ion-row>
+              <ion-row justify-content-center><ion-label style="font-size: 12px;">seguidos</ion-label></ion-row>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="8">
+          </ion-col>
+          <ion-col size="4">
+            <ion-row justify-content-end>
+              <ion-button *ngIf="loggedUser.seguidos.indexOf(usuario.id) != -1" default size="small" color="light" (click)="dejarDeSeguir(usuario.id)">
+                Siguiendo
+              </ion-button>
+            </ion-row>
+            <ion-row justify-content-end>
+              <ion-button *ngIf="loggedUser.seguidos.indexOf(usuario.id) == -1" default size="small" color="primary" (click)="seguir(usuario.id)">
+                Seguir
+              </ion-button>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+      <ion-grid style="margin-top: 15px">
+        <ion-row text-center justify-content-around>
+          <ion-col *ngIf="!mostrarRecetas" (click)="showRecetas()" ><label style="font-size: 18px;">{{usuario.recetas.length}} recetas </label></ion-col>
+          <ion-col *ngIf="mostrarRecetas"><b style="font-size: 18px;">{{usuario.recetas.length}} recetas </b></ion-col>
+          <ion-col *ngIf="!mostrarRecetas"><b style="font-size: 18px;">{{usuario.eventos.length}} eventos</b></ion-col>
+          <ion-col *ngIf="mostrarRecetas" (click)="showEventos()" ><label style="font-size: 18px;">{{usuario.eventos.length}} eventos</label></ion-col>
+        </ion-row>
+      </ion-grid>
+  
+        <ion-grid *ngIf="mostrarRecetas" style="margin-top: 15px">
+  
+            <ion-row  *ngFor="let receta of recetas; let i = index;">
+  
+              <ion-col *ngIf="i%3 == 0 ">
+                      <img style="width: 100% !important; height: 100% !important;" src="{{recetas[i].imagenes[0]}}" (click)="visualizarReceta(recetas[i].id)"> 
+              </ion-col>
+              <ion-col *ngIf="i+1<=recetas.length-1 && i%3==0 ">
+                    <img style="width: 100% !important; height: 100% !important;" src="{{recetas[i+1].imagenes[0]}}" (click)="visualizarReceta(recetas[i+1].id)"> 
+              </ion-col>
+              <ion-col *ngIf="i+2<=recetas.length-1 && i%3==0 ">
+                    <img style="width: 100% !important; height: 100% !important;" src="{{recetas[i+2].imagenes[0]}}" (click)="visualizarReceta(recetas[i+2].id)"> 
+              </ion-col>
+  
+            </ion-row>
+    
+          </ion-grid>
+
+          <ion-grid *ngIf="!mostrarRecetas" style="margin-top: 10px">
+
+            <ion-row  *ngFor="let evento of eventos; let i = index;" >
+  
+              <ion-col *ngIf="i%3 == 0 ">
+                      <img style="width: 100% !important; height: 100% !important;" src="{{eventos[i].imagenes[0]}}" (click)="visualizarEvento(eventos[i].id)"> 
+              </ion-col>
+              <ion-col *ngIf="i+1<=eventos.length-1 && i%3==0 ">
+                    <img style="width: 100% !important; height: 100% !important;" src="{{eventos[i+1].imagenes[0]}}" (click)="visualizarEvento(eventos[i+1].id)"> 
+              </ion-col>
+              <ion-col *ngIf="i+2<=eventos.length-1 && i%3==0 ">
+                    <img style="width: 100% !important; height: 100% !important;" src="{{eventos[i+2].imagenes[0]}}" (click)="visualizarEvento(eventos[i+2].id)"> 
+              </ion-col>
+  
+            </ion-row>
+    
+          </ion-grid>
+
+    </div>
+  </ion-content>

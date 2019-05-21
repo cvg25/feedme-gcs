@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>Crear Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- FORMULARIO PARA DATOS BÁSICOS-->
+  <ion-content>
+    <ion-title padding text-center style="white-space: pre-wrap; margin-top: 10px">Completa los datos de tu Evento</ion-title>
+
+    
+      <form [formGroup]="onDatosBasicosForm" class="list-form" style="margin-right: 20px; margin-left: 20px; ">
+        <ion-item no-padding class="animated fadeInUp">
+          <ion-label position="floating" style="font-size: 16px">
+            <ion-icon mode="ios" name="bookmark" item-start style="margin-right: 15px"></ion-icon>
+            Título
+          </ion-label>
+          <ion-input type="email" formControlName="titulo" clear-input></ion-input>
+        </ion-item>
+    
+        <br>
+    
+        <ion-item no-padding class="animated fadeInUp">
+          <ion-label position="floating" style="font-size: 16px">
+            <ion-icon mode="ios" name="bookmarks" item-start style="margin-right: 15px"></ion-icon>
+            Descripción
+          </ion-label>
+          <ion-textarea rows="3" formControlName="descripcion"> </ion-textarea>
+        </ion-item>
+    
+        <br>
+    
+        <ion-item no-padding class="animated fadeInUp">
+          <ion-label position="floating" style="font-size: 16px">
+            <ion-icon name="time" item-start style="margin-right: 15px"></ion-icon>
+            Fecha
+          </ion-label>
+          <ion-input formControlName="tiempo" clear-input></ion-input>
+        </ion-item>
+    
+        <br>
+    
+        <ion-item no-padding class="animated fadeInUp">
+          <ion-label position="floating" style="font-size: 16px">
+            <ion-icon name="podium" item-start style="margin-right: 15px"></ion-icon>
+            Visibilidad
+          </ion-label>
+          <ion-select mode="md" formControlName="visibilidad">
+            <ion-select-option *ngFor="let visibilidad of visibilidades" value="visibilidad">{{Visibilidad[visibilidad]}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+    
+
+      </form>
+
+      <br><br>
+
+      <div text-center>
+        <ion-item lines="none" style="margin-left: 5px; display: inline-block">
+          <div style="height: 75px; width: 75px"  >
+              <img (click)='takePhoto1()' style="width: 100% !important; height: 100% !important;" src="{{imagenEvento1}}">
+            </div>
+        </ion-item>
+      
+        <ion-item lines="none" style="margin-left: 5px; display: inline-block">
+          <div style="height: 75px; width: 75px"  >
+              <img (click)='takePhoto2()' style="width: 100% !important; height: 100% !important;" src="{{imagenEvento2}}">
+            </div>
+        </ion-item>
+      
+        <ion-item lines="none" style="margin-left: 5px; display: inline-block">
+          <div style="height: 75px; width: 75px"  >
+              <img style="width: 100% !important; height: 100% !important;" src="{{imagenEvento3}}">
+            </div>
+        </ion-item>
+      
+      </div>
+  
+      
+  <div style="margin-top: 60px" style="margin-right: 10px; margin-left: 10px; margin-top: 60px;">
+    <ion-button style="font-size: 14px" size="medium" expand="full" color="light" mode="ios" shape="round"
+      (click)="crearEvento()" [disabled]="!onDatosBasicosForm.valid" tappable>
+      Crear Evento
+      <ion-icon mode="ios" name="arrow-forward" item-start></ion-icon>
+    </ion-button>
+  </div>
+  
+
+  
+
+</ion-content>

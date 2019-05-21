@@ -1,0 +1,7 @@
+{
+  "name": "Feedme",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-row style="margin-top: 20px; margin-bottom: 20px" justify-content-center aling-items-center>
+    <ion-label color="danger">{{errorMessage}}</ion-label>
+  </ion-row>
+
+  <form [formGroup]="onRegisterForm" class="list-form" style="margin-right: 20px; margin-left: 20px;">
+ 
+        <ion-item lines="none" style="margin-left: 25%">
+            <ion-avatar style="height: 150px; width: 150px"  >
+                <ion-fab-button vertical="bottom" (click)='takePhoto()' color="light"  style=" position: absolute; margin-left: 106px; margin-top: 89px;"   >
+                    <ion-icon  name="camera"></ion-icon>
+                </ion-fab-button>
+                <img (click)='takePhoto()' style="width: 100% !important; height: 100% !important;" src="{{imagenUsuario}}">
+            </ion-avatar>
+          </ion-item>
+
+  
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        <ion-icon name="mail" item-start></ion-icon>
+        Email
+      </ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        <ion-icon name="lock" item-start></ion-icon>
+        Contraseña
+      </ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        <ion-icon name="at" item-start></ion-icon>
+        Username
+      </ion-label>
+      <ion-input formControlName="username"></ion-input>
+    </ion-item>
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        <ion-icon name="person" item-start></ion-icon>
+        Nombre completo
+      </ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </ion-item>
+
+
+  </form>
+
+ <ion-grid>
+   <ion-row text-center style="margin-left: 15px">
+    <!--
+    <div style="width: 200px; height: 200px" >
+      <img  style="width: 100% !important; height: 100% !important;" src="{{imagenUsuario}}">
+    </div>
+-->
+    
+
+     <!--
+    <ion-fab-button vertical="bottom" (click)='takePhoto()' color="dark"  style="margin-left:15px"   >
+      <ion-icon  name="camera"></ion-icon>
+  </ion-fab-button>
+
+    <ion-fab-button  (click)='takePhoto()' style="margin-left:15px" color="dark"  >
+      <ion-icon  name="images"></ion-icon>
+  </ion-fab-button>
+-->
+   </ion-row>
+ </ion-grid>
+  
+
+  <div style="margin-top: 10px" style="margin-right: 10px; margin-left: 10px; margin-top: 60px;">
+    <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="tryRegister()"
+      [disabled]="!onRegisterForm.valid" tappable>
+      Confirmar
+    </ion-button>
+  </div>
+
+</ion-content>
